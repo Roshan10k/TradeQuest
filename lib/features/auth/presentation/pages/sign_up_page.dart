@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tradequest/core/router/app_routes.dart';
 import 'package:tradequest/core/theme/app_colors.dart';
@@ -92,23 +91,34 @@ class _SignUpPageState extends State<SignUpPage> {
         padding: const EdgeInsets.fromLTRB(16, 20, 16, 24),
         child: Column(
           children: [
-            const SizedBox(height: 12),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: IconButton(
+                onPressed: () => context.pop(),
+                icon: const Icon(
+                  Icons.arrow_back_ios_new_rounded,
+                  size: 20,
+                  color: AppColors.textSecondary,
+                ),
+              ),
+            ),
+            const SizedBox(height: 4),
             Container(
-              height: 84,
-              width: 84,
+              height: 92,
+              width: 92,
               decoration: BoxDecoration(
                 color: AppColors.bgCard,
-                borderRadius: BorderRadius.circular(24),
+                borderRadius: BorderRadius.circular(28),
                 boxShadow: const [
                   BoxShadow(
-                    color: Color(0x553D4DF2),
-                    blurRadius: 30,
-                    spreadRadius: -8,
+                    color: Color(0x663D4DF2),
+                    blurRadius: 34,
+                    spreadRadius: -6,
                   ),
                 ],
               ),
               alignment: Alignment.center,
-              child: SvgPicture.asset('assets/logo.svg', width: 44, height: 44),
+              child: Image.asset('assets/images/logo.png', width: 86, height: 86),
             ),
             const SizedBox(height: 24),
             Text(
@@ -269,7 +279,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       Expanded(
                         child: _SocialButton(
                           label: 'Google',
-                          icon: 'assets/images/logo.png',
+                          icon: null,
                           onPressed: () {},
                         ),
                       ),

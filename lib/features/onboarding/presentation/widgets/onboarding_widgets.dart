@@ -62,17 +62,18 @@ class OnboardingScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     final body = scrollable
         ? SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
+            keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.manual,
             child: child,
           )
         : child;
 
     return Scaffold(
       backgroundColor: AppColors.bgPrimary,
+      resizeToAvoidBottomInset: true,
       body: Stack(
         children: [
           const Positioned.fill(child: OnboardingBackdrop()),
-          SafeArea(child: body),
+          SafeArea(bottom: false, child: body),
         ],
       ),
     );

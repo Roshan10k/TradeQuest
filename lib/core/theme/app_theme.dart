@@ -66,6 +66,12 @@ abstract final class AppTheme {
           fontSize: 15,
           fontWeight: FontWeight.w600,
         ),
+        headlineSmall: base.headlineSmall?.copyWith(
+          color: AppColors.textPrimary,
+          fontSize: 20,
+          fontWeight: FontWeight.w700,
+          height: 1.15,
+        ),
         labelSmall: base.labelSmall?.copyWith(
           color: AppColors.textTertiary,
           fontSize: 11,

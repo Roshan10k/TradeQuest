@@ -26,10 +26,26 @@ class _GoalSelectionPageState extends State<GoalSelectionPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const FlowStepHeader(
-                leading: 'STEP 01 OF 03',
-                trailing: '33% COMPLETE',
-                progress: 0.33,
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: () => context.pop(),
+                    padding: EdgeInsets.zero,
+                    icon: const Icon(
+                      Icons.arrow_back_ios_new_rounded,
+                      size: 20,
+                      color: AppColors.textSecondary,
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  const Expanded(
+                    child: FlowStepHeader(
+                      leading: 'STEP 01 OF 03',
+                      trailing: '33% COMPLETE',
+                      progress: 0.33,
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(height: 18),
               Text(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tradequest/core/router/app_routes.dart';
 import 'package:tradequest/core/theme/app_colors.dart';
@@ -32,10 +31,10 @@ class WelcomePage extends StatelessWidget {
                   ],
                 ),
                 alignment: Alignment.center,
-                child: SvgPicture.asset(
-                  'assets/logo.svg',
-                  width: 46,
-                  height: 46,
+                child: Image.asset(
+                  'assets/images/logo.png',
+                  width: 86,
+                  height: 86,
                 ),
               ),
             ),

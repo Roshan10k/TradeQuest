@@ -9,7 +9,6 @@ import 'package:tradequest/features/auth/presentation/pages/welcome_page.dart';
 import 'package:tradequest/features/onboarding/presentation/pages/badge_unlock_page.dart';
 import 'package:tradequest/features/onboarding/presentation/pages/first_trade_page.dart';
 import 'package:tradequest/features/onboarding/presentation/pages/goal_selection_page.dart';
-import 'package:tradequest/features/trading/presentation/pages/trade_result_page.dart';
 
 class AppRouter {
   AppRouter._();
@@ -46,14 +45,6 @@ class AppRouter {
         path: AppRoutes.badgeUnlock,
         builder: (context, state) => const BadgeUnlockPage(),
       ),
-      GoRoute(
-        path: AppRoutes.otp,
-        builder: (context, state) => const PlaceholderPage(title: 'OTP'),
-      ),
-      GoRoute(
-        path: AppRoutes.pin,
-        builder: (context, state) => const PlaceholderPage(title: 'PIN'),
-      ),
       StatefulShellRoute.indexedStack(
         builder: (context, state, shell) => MainShell(navigationShell: shell),
         branches: [
@@ -69,25 +60,27 @@ class AppRouter {
           StatefulShellBranch(
             routes: [
               GoRoute(
-                path: AppRoutes.markets,
-                builder: (context, state) =>
-                    const PlaceholderPage(title: 'Markets'),
-              ),
-            ],
-          ),
-          StatefulShellBranch(
-            routes: [
-              GoRoute(
                 path: AppRoutes.trade,
-                builder: (context, state) => const PlaceholderPage(title: 'Trade'),
+                builder: (context, state) =>
+                    const PlaceholderPage(title: 'Trade'),
               ),
             ],
           ),
           StatefulShellBranch(
             routes: [
               GoRoute(
-                path: AppRoutes.news,
-                builder: (context, state) => const PlaceholderPage(title: 'News'),
+                path: AppRoutes.missions,
+                builder: (context, state) =>
+                    const PlaceholderPage(title: 'Missions'),
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: AppRoutes.portfolio,
+                builder: (context, state) =>
+                    const PlaceholderPage(title: 'Portfolio'),
               ),
             ],
           ),
@@ -103,44 +96,17 @@ class AppRouter {
         ],
       ),
       GoRoute(
-        path: AppRoutes.wallet,
-        builder: (context, state) => const PlaceholderPage(title: 'Wallet'),
-      ),
-      GoRoute(
         path: AppRoutes.assetDetail,
         builder: (context, state) => PlaceholderPage(
           title: 'Asset Detail',
-          subtitle: state.pathParameters['symbol'] ?? 'BTC',
+          subtitle: state.pathParameters['symbol'] ?? 'AAPL',
         ),
-      ),
-      GoRoute(
-        path: AppRoutes.advancedChart,
-        builder: (context, state) => PlaceholderPage(
-          title: 'Advanced Chart',
-          subtitle: state.pathParameters['symbol'] ?? 'BTC',
-        ),
-      ),
-      GoRoute(
-        path: AppRoutes.txHistory,
-        builder: (context, state) =>
-            const PlaceholderPage(title: 'Transaction History'),
-      ),
-      GoRoute(
-        path: AppRoutes.txDetail,
-        builder: (context, state) => PlaceholderPage(
-          title: 'Transaction Detail',
-          subtitle: state.pathParameters['id'] ?? '0',
-        ),
-      ),
-      GoRoute(
-        path: AppRoutes.txSuccess,
-        builder: (context, state) =>
-            const PlaceholderPage(title: 'Transaction Success'),
       ),
       GoRoute(
         path: AppRoutes.tradeResult,
-        builder: (context, state) => TradeResultPage(
-          side: state.uri.queryParameters['side'] ?? 'buy',
+        builder: (context, state) => PlaceholderPage(
+          title: 'Trade Result',
+          subtitle: state.uri.queryParameters['side'] ?? 'buy',
         ),
       ),
       GoRoute(

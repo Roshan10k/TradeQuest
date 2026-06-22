@@ -29,20 +29,28 @@ class _FirstTradePageState extends State<FirstTradePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const FlowStepHeader(
-              leading: 'STEP 2 OF 3',
-              trailing: 'TRADE SIMULATION',
-              progress: 0.66,
+            Row(
+              children: [
+                IconButton(
+                  onPressed: () => context.pop(),
+                  padding: EdgeInsets.zero,
+                  icon: const Icon(
+                    Icons.arrow_back_ios_new_rounded,
+                    size: 20,
+                    color: AppColors.textSecondary,
+                  ),
+                ),
+                const SizedBox(width: 8),
+                const Expanded(
+                  child: FlowStepHeader(
+                    leading: 'STEP 2 OF 3',
+                    trailing: 'TRADE SIMULATION',
+                    progress: 0.66,
+                  ),
+                ),
+              ],
             ),
             const SizedBox(height: 14),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: IconButton(
-                onPressed: () => context.pop(),
-                icon: const Icon(Icons.arrow_back_ios_new, size: 20),
-              ),
-            ),
-            const SizedBox(height: 6),
             Text(
               'Your first trade',
               style: Theme.of(

@@ -11,14 +11,14 @@ abstract final class AppRoutes {
 
   // Main shell tabs
   static const home = '/home';
-  static const markets = '/markets';
   static const trade = '/trade';
-  static const news = '/news';
+  static const missions = '/missions';
+  static const portfolio = '/portfolio';
   static const profile = '/profile';
 
   // Stacks
   static const wallet = '/wallet';
-  static const portfolio = '/portfolio';
+  static const portfolioBreakdown = '/portfolio/breakdown';
   static const assetDetail = '/asset/:symbol';
   static const advancedChart = '/asset/:symbol/chart';
   static const txHistory = '/transactions';
