@@ -18,13 +18,18 @@ abstract final class AppRoutes {
 
   // Stacks
   static const wallet = '/wallet';
+  static const settings = '/settings';
+  static const help = '/help';
   static const portfolioBreakdown = '/portfolio/breakdown';
+  static const watchlist = '/watchlist';
   static const assetDetail = '/asset/:symbol';
   static const advancedChart = '/asset/:symbol/chart';
   static const txHistory = '/transactions';
   static const txDetail = '/transactions/:id';
   static const txSuccess = '/transactions/success';
+  static const tradeConfirm = '/trade/confirm';
   static const tradeResult = '/trade/result';
+  static const tradeReview = '/trade/review';
   static const leaderboard = '/leaderboard';
   static const notifications = '/notifications';
 }
