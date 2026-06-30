@@ -4,11 +4,7 @@ import 'package:tradequest/core/router/app_routes.dart';
 import 'package:tradequest/core/theme/app_colors.dart';
 
 class TradeReviewPage extends StatelessWidget {
-  const TradeReviewPage({
-    super.key,
-    required this.side,
-    required this.symbol,
-  });
+  const TradeReviewPage({super.key, required this.side, required this.symbol});
 
   final String side;
   final String symbol;
@@ -22,24 +18,24 @@ class TradeReviewPage extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           physics: const ClampingScrollPhysics(),
-          padding: const EdgeInsets.fromLTRB(16, 28, 16, 24),
+          padding: const EdgeInsets.fromLTRB(20, 28, 20, 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
                 _isBuy ? 'Buy Review' : 'Sale Review',
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                  fontSize: 26,
-                ),
+                style: Theme.of(
+                  context,
+                ).textTheme.displayMedium?.copyWith(fontSize: 26),
               ),
               const SizedBox(height: 6),
               Text(
                 'Detailed breakdown of your $symbol ${_isBuy ? 'purchase' : 'sale'}.',
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  color: AppColors.textSecondary,
-                ),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodyLarge?.copyWith(color: AppColors.textSecondary),
               ),
               const SizedBox(height: 26),
               _ReviewSection(
@@ -156,15 +152,21 @@ class TradeReviewPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 28),
-              SizedBox(
+              Container(
                 height: 58,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  boxShadow: const [
+                    BoxShadow(color: Color(0x4D6366F1), blurRadius: 15),
+                  ],
+                ),
                 child: FilledButton.icon(
                   onPressed: () => context.go(AppRoutes.home),
                   style: FilledButton.styleFrom(
                     backgroundColor: AppColors.button,
                     foregroundColor: AppColors.buttonText,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
+                      borderRadius: BorderRadius.circular(8),
                     ),
                     textStyle: Theme.of(context).textTheme.titleMedium
                         ?.copyWith(fontWeight: FontWeight.w700),
@@ -194,7 +196,7 @@ class _ReviewSection extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: AppColors.bgCard,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(8),
         border: Border.all(color: AppColors.borderDefault),
       ),
       child: Column(
@@ -234,9 +236,9 @@ class _PriceColumn extends StatelessWidget {
       children: [
         Text(
           label,
-          style: Theme.of(context).textTheme.bodySmall?.copyWith(
-            color: AppColors.textSecondary,
-          ),
+          style: Theme.of(
+            context,
+          ).textTheme.bodySmall?.copyWith(color: AppColors.textSecondary),
         ),
         const SizedBox(height: 2),
         Text(

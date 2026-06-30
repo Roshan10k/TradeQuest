@@ -25,7 +25,7 @@ class _TradePageState extends State<TradePage> {
         return SafeArea(
           child: Center(
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(16, 12, 16, 22),
+              padding: const EdgeInsets.fromLTRB(20, 12, 20, 22),
               child: _StockSearchOverlay(
                 onStockTap: (stock) {
                   Navigator.of(context).pop();
@@ -58,7 +58,7 @@ class _TradePageState extends State<TradePage> {
       body: SafeArea(
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
-          padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
+          padding: const EdgeInsets.fromLTRB(20, 16, 20, 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -69,7 +69,7 @@ class _TradePageState extends State<TradePage> {
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   decoration: BoxDecoration(
                     color: AppColors.bgCard,
-                    borderRadius: BorderRadius.circular(18),
+                    borderRadius: BorderRadius.circular(8),
                     border: Border.all(color: AppColors.borderDefault),
                     boxShadow: const [
                       BoxShadow(
@@ -135,7 +135,7 @@ class _TradePageState extends State<TradePage> {
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
                   color: const Color(0xFF201B12),
-                  borderRadius: BorderRadius.circular(18),
+                  borderRadius: BorderRadius.circular(8),
                   border: Border.all(
                     color: AppColors.accentAmber.withValues(alpha: 0.35),
                   ),
@@ -228,10 +228,10 @@ class _StockSearchOverlay extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       constraints: const BoxConstraints(maxWidth: 430),
-      padding: const EdgeInsets.fromLTRB(16, 18, 16, 14),
+      padding: const EdgeInsets.fromLTRB(20, 18, 20, 14),
       decoration: BoxDecoration(
         color: AppColors.bgPrimary,
-        borderRadius: BorderRadius.circular(18),
+        borderRadius: BorderRadius.circular(8),
         border: Border.all(
           color: AppColors.button.withValues(alpha: 0.5),
           width: 1.2,
@@ -259,7 +259,7 @@ class _StockSearchOverlay extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 14),
                   decoration: BoxDecoration(
                     color: AppColors.bgCard,
-                    borderRadius: BorderRadius.circular(14),
+                    borderRadius: BorderRadius.circular(8),
                     border: Border.all(
                       color: AppColors.button.withValues(alpha: 0.85),
                       width: 1.1,

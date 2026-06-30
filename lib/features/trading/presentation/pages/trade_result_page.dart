@@ -5,11 +5,7 @@ import 'package:tradequest/core/theme/app_colors.dart';
 import 'package:tradequest/core/widgets/market_ui.dart';
 
 class TradeResultPage extends StatelessWidget {
-  const TradeResultPage({
-    super.key,
-    required this.side,
-    this.symbol = 'AAPL',
-  });
+  const TradeResultPage({super.key, required this.side, this.symbol = 'AAPL'});
 
   final String side;
   final String symbol;
@@ -22,7 +18,7 @@ class TradeResultPage extends StatelessWidget {
       backgroundColor: AppColors.bgPrimary,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(16, 24, 16, 24),
+          padding: const EdgeInsets.fromLTRB(20, 24, 20, 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -144,8 +140,14 @@ class TradeResultPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 24),
-              SizedBox(
+              Container(
                 height: 58,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  boxShadow: const [
+                    BoxShadow(color: Color(0x4D6366F1), blurRadius: 15),
+                  ],
+                ),
                 child: FilledButton(
                   onPressed: () => context.pushReplacement(
                     '${AppRoutes.tradeReview}?side=$side&symbol=$symbol',
@@ -154,7 +156,7 @@ class TradeResultPage extends StatelessWidget {
                     backgroundColor: AppColors.button,
                     foregroundColor: AppColors.buttonText,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
+                      borderRadius: BorderRadius.circular(8),
                     ),
                     textStyle: Theme.of(context).textTheme.titleMedium
                         ?.copyWith(fontWeight: FontWeight.w700),
@@ -174,7 +176,7 @@ class TradeResultPage extends StatelessWidget {
                       width: 1.2,
                     ),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
+                      borderRadius: BorderRadius.circular(8),
                     ),
                     textStyle: Theme.of(context).textTheme.titleMedium
                         ?.copyWith(fontWeight: FontWeight.w600),

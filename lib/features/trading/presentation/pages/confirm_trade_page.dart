@@ -5,11 +5,7 @@ import 'package:tradequest/core/theme/app_colors.dart';
 import 'package:tradequest/core/widgets/market_ui.dart';
 
 class ConfirmTradePage extends StatefulWidget {
-  const ConfirmTradePage({
-    super.key,
-    required this.side,
-    required this.symbol,
-  });
+  const ConfirmTradePage({super.key, required this.side, required this.symbol});
 
   final String side;
   final String symbol;
@@ -32,7 +28,7 @@ class _ConfirmTradePageState extends State<ConfirmTradePage> {
       body: SafeArea(
         child: SingleChildScrollView(
           physics: const ClampingScrollPhysics(),
-          padding: const EdgeInsets.fromLTRB(16, 28, 16, 24),
+          padding: const EdgeInsets.fromLTRB(20, 28, 20, 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -44,7 +40,7 @@ class _ConfirmTradePageState extends State<ConfirmTradePage> {
                     color: _isBuy
                         ? AppColors.accentGreenDim
                         : AppColors.accentRedDim,
-                    borderRadius: BorderRadius.circular(22),
+                    borderRadius: BorderRadius.circular(8),
                   ),
                   child: Icon(
                     _isBuy
@@ -59,9 +55,9 @@ class _ConfirmTradePageState extends State<ConfirmTradePage> {
               Text(
                 _isBuy ? 'Confirm Buy' : 'Confirm Sale',
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                  fontSize: 26,
-                ),
+                style: Theme.of(
+                  context,
+                ).textTheme.displayMedium?.copyWith(fontSize: 26),
               ),
               const SizedBox(height: 6),
               Text(
@@ -69,9 +65,9 @@ class _ConfirmTradePageState extends State<ConfirmTradePage> {
                     ? 'Review your quest execution details'
                     : 'Finalize your market order for ${widget.symbol}',
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  color: AppColors.textSecondary,
-                ),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodyLarge?.copyWith(color: AppColors.textSecondary),
               ),
               const SizedBox(height: 24),
               MarketPanel(
@@ -96,7 +92,7 @@ class _ConfirmTradePageState extends State<ConfirmTradePage> {
                   padding: const EdgeInsets.all(14),
                   decoration: BoxDecoration(
                     color: AppColors.accentPurpleDim,
-                    borderRadius: BorderRadius.circular(16),
+                    borderRadius: BorderRadius.circular(8),
                     border: Border.all(
                       color: AppColors.accentPurple.withValues(alpha: 0.4),
                     ),
@@ -109,7 +105,7 @@ class _ConfirmTradePageState extends State<ConfirmTradePage> {
                         width: 36,
                         decoration: BoxDecoration(
                           color: AppColors.accentPurple.withValues(alpha: 0.2),
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(8),
                         ),
                         child: const Icon(
                           Icons.emoji_events_rounded,
@@ -228,15 +224,13 @@ class _ConfirmTradePageState extends State<ConfirmTradePage> {
                     backgroundColor: confirmColor,
                     foregroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
+                      borderRadius: BorderRadius.circular(8),
                     ),
                     textStyle: Theme.of(context).textTheme.titleMedium
                         ?.copyWith(fontWeight: FontWeight.w700),
                   ),
                   icon: Icon(
-                    _isBuy
-                        ? Icons.rocket_launch_rounded
-                        : Icons.check_rounded,
+                    _isBuy ? Icons.rocket_launch_rounded : Icons.check_rounded,
                     size: 20,
                   ),
                   label: Text(_isBuy ? 'Confirm buy' : 'Confirm sell'),
@@ -254,7 +248,7 @@ class _ConfirmTradePageState extends State<ConfirmTradePage> {
                       width: 1.2,
                     ),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
+                      borderRadius: BorderRadius.circular(8),
                     ),
                   ),
                   child: const Text('Cancel'),
@@ -281,15 +275,15 @@ class _DetailRow extends StatelessWidget {
       children: [
         Text(
           label,
-          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-            color: AppColors.textSecondary,
-          ),
+          style: Theme.of(
+            context,
+          ).textTheme.bodyLarge?.copyWith(color: AppColors.textSecondary),
         ),
         Text(
           value,
-          style: Theme.of(context).textTheme.titleMedium?.copyWith(
-            fontWeight: FontWeight.w700,
-          ),
+          style: Theme.of(
+            context,
+          ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w700),
         ),
       ],
     );
