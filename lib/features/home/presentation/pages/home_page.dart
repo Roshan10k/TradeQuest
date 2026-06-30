@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
-          padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
+          padding: const EdgeInsets.fromLTRB(20, 16, 20, 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -111,7 +111,7 @@ class HomePage extends StatelessWidget {
                       height: 92,
                       width: 92,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
+                        borderRadius: BorderRadius.circular(8),
                         color: AppColors.bgCardAlt.withValues(alpha: 0.45),
                       ),
                       child: Stack(
@@ -177,7 +177,7 @@ class HomePage extends StatelessWidget {
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
                   color: AppColors.bgCard,
-                  borderRadius: BorderRadius.circular(18),
+                  borderRadius: BorderRadius.circular(8),
                   border: Border.all(
                     color: AppColors.button.withValues(alpha: 0.35),
                     style: BorderStyle.solid,
@@ -192,7 +192,7 @@ class HomePage extends StatelessWidget {
                       width: 48,
                       decoration: BoxDecoration(
                         color: AppColors.accentPurpleDim,
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(8),
                       ),
                       child: const Icon(
                         Icons.bolt_rounded,
@@ -225,15 +225,24 @@ class HomePage extends StatelessWidget {
                                 ),
                           ),
                           const SizedBox(height: 14),
-                          SizedBox(
+                          Container(
                             height: 54,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Color(0x4D6366F1),
+                                  blurRadius: 15,
+                                ),
+                              ],
+                            ),
                             child: FilledButton(
                               onPressed: () => context.go(AppRoutes.trade),
                               style: FilledButton.styleFrom(
                                 backgroundColor: AppColors.button,
                                 foregroundColor: AppColors.buttonText,
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(16),
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
                                 textStyle: Theme.of(context)
                                     .textTheme
