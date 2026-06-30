@@ -5,11 +5,11 @@ abstract final class AppSpacing {
   static const lg = 16.0;
   static const xl = 20.0;
   static const xxl = 24.0;
-  static const screenH = 16.0;
-  static const screenV = 16.0;
-  static const cardRadius = 16.0;
-  static const buttonRadius = 16.0;
-  static const inputRadius = 14.0;
+  static const screenH = 20.0;
+  static const screenV = 20.0;
+  static const cardRadius = 8.0;
+  static const buttonRadius = 8.0;
+  static const inputRadius = 8.0;
   static const buttonHeight = 56.0;
   static const bottomNavHeight = 64.0;
 }

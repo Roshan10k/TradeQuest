@@ -5,7 +5,7 @@ import 'package:tradequest/core/theme/app_spacing.dart';
 
 abstract final class AppTheme {
   static ThemeData get dark {
-    final base = GoogleFonts.spaceGroteskTextTheme(ThemeData.dark().textTheme);
+    final base = GoogleFonts.soraTextTheme(ThemeData.dark().textTheme);
 
     return ThemeData(
       useMaterial3: true,
@@ -33,19 +33,21 @@ abstract final class AppTheme {
       textTheme: TextTheme(
         displayMedium: base.displayMedium?.copyWith(
           color: AppColors.textPrimary,
-          fontSize: 30,
+          fontSize: 32,
           fontWeight: FontWeight.w700,
-          height: 1.12,
+          height: 1.2,
         ),
         headlineMedium: base.headlineMedium?.copyWith(
           color: AppColors.textPrimary,
           fontSize: 24,
           fontWeight: FontWeight.w700,
+          height: 1.3,
         ),
         titleLarge: base.titleLarge?.copyWith(
           color: AppColors.textPrimary,
-          fontSize: 19,
+          fontSize: 20,
           fontWeight: FontWeight.w600,
+          height: 1.4,
         ),
         titleMedium: base.titleMedium?.copyWith(
           color: AppColors.textPrimary,
@@ -54,12 +56,13 @@ abstract final class AppTheme {
         ),
         bodyLarge: base.bodyLarge?.copyWith(
           color: AppColors.textPrimary,
-          fontSize: 15,
-          height: 1.45,
+          fontSize: 16,
+          height: 1.5,
         ),
         bodyMedium: base.bodyMedium?.copyWith(
           color: AppColors.textSecondary,
-          fontSize: 13,
+          fontSize: 14,
+          height: 1.5,
         ),
         labelLarge: base.labelLarge?.copyWith(
           color: AppColors.textPrimary,
@@ -70,13 +73,13 @@ abstract final class AppTheme {
           color: AppColors.textPrimary,
           fontSize: 20,
           fontWeight: FontWeight.w700,
-          height: 1.15,
+          height: 1.4,
         ),
         labelSmall: base.labelSmall?.copyWith(
           color: AppColors.textTertiary,
-          fontSize: 11,
-          fontWeight: FontWeight.w500,
-          letterSpacing: 0.4,
+          fontSize: 12,
+          fontWeight: FontWeight.w600,
+          letterSpacing: 1.2,
         ),
         bodySmall: base.bodySmall?.copyWith(
           color: AppColors.textSecondary,
