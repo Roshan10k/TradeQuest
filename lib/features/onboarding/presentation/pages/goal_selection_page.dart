@@ -18,7 +18,7 @@ class _GoalSelectionPageState extends State<GoalSelectionPage> {
   Widget build(BuildContext context) {
     return OnboardingScaffold(
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
+        padding: const EdgeInsets.fromLTRB(20, 16, 20, 24),
         child: ConstrainedBox(
           constraints: BoxConstraints(
             minHeight: MediaQuery.of(context).size.height - 96,

@@ -25,7 +25,7 @@ class _FirstTradePageState extends State<FirstTradePage> {
     return OnboardingScaffold(
       scrollable: true,
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
+        padding: const EdgeInsets.fromLTRB(20, 16, 20, 24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -165,7 +165,7 @@ class _FirstTradePageState extends State<FirstTradePage> {
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: AppColors.bgCard,
-                borderRadius: BorderRadius.circular(16),
+                borderRadius: BorderRadius.circular(8),
                 border: Border.all(
                   color: AppColors.borderDefault.withValues(alpha: 0.7),
                   style: BorderStyle.solid,
@@ -178,7 +178,7 @@ class _FirstTradePageState extends State<FirstTradePage> {
                     width: 40,
                     decoration: BoxDecoration(
                       color: AppColors.accentAmberDim,
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(8),
                     ),
                     child: const Icon(
                       Icons.account_balance_wallet_outlined,
@@ -235,7 +235,7 @@ class _FirstTradePageState extends State<FirstTradePage> {
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: AppColors.bgCard.withValues(alpha: 0.86),
-                borderRadius: BorderRadius.circular(16),
+                borderRadius: BorderRadius.circular(8),
                 border: Border.all(color: AppColors.borderDefault),
               ),
               child: Row(

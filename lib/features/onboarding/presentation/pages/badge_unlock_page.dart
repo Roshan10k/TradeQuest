@@ -12,7 +12,7 @@ class BadgeUnlockPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return OnboardingScaffold(
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
+        padding: const EdgeInsets.fromLTRB(20, 16, 20, 24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -44,7 +44,7 @@ class BadgeUnlockPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                     boxShadow: const [
                       BoxShadow(
-                        color: Color(0x773D4DF2),
+                        color: Color(0x776366F1),
                         blurRadius: 28,
                         spreadRadius: -4,
                       ),

@@ -132,9 +132,20 @@ class FlowPrimaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: 58,
       width: double.infinity,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(AppSpacing.buttonRadius),
+        boxShadow: enabled
+            ? [
+                BoxShadow(
+                  color: AppColors.primary.withValues(alpha: 0.3),
+                  blurRadius: 15,
+                ),
+              ]
+            : null,
+      ),
       child: FilledButton(
         onPressed: enabled ? onPressed : null,
         style: FilledButton.styleFrom(
@@ -278,13 +289,13 @@ class GoalChoiceCard extends StatelessWidget {
       color: Colors.transparent,
       child: InkWell(
         onTap: onTap,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(8),
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 220),
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             color: background,
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(8),
             border: Border.all(
               color: selected ? Colors.transparent : AppColors.borderDefault,
             ),
@@ -298,7 +309,7 @@ class GoalChoiceCard extends StatelessWidget {
                   color: selected
                       ? Colors.black.withValues(alpha: 0.16)
                       : AppColors.bgCardAlt,
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(8),
                 ),
                 child: Icon(
                   icon,

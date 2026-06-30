@@ -11,7 +11,7 @@ class WelcomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return OnboardingScaffold(
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(16, 18, 16, 24),
+        padding: const EdgeInsets.fromLTRB(20, 18, 20, 24),
         child: Column(
           children: [
             const SizedBox(height: 36),
@@ -21,10 +21,10 @@ class WelcomePage extends StatelessWidget {
                 width: 92,
                 decoration: BoxDecoration(
                   color: AppColors.bgCard,
-                  borderRadius: BorderRadius.circular(28),
+                  borderRadius: BorderRadius.circular(8),
                   boxShadow: const [
                     BoxShadow(
-                      color: Color(0x663D4DF2),
+                      color: Color(0x666366F1),
                       blurRadius: 34,
                       spreadRadius: -6,
                     ),
@@ -202,7 +202,7 @@ class _FeatureChip extends StatelessWidget {
             width: 54,
             decoration: BoxDecoration(
               color: AppColors.bgCard.withValues(alpha: 0.88),
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(8),
               border: Border.all(color: AppColors.borderDefault),
             ),
             child: Icon(icon, color: AppColors.textSecondary, size: 26),
