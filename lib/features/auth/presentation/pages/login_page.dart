@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tradequest/core/router/app_routes.dart';
 import 'package:tradequest/core/theme/app_colors.dart';
+import 'package:tradequest/core/widgets/app_feedback.dart';
 import 'package:tradequest/features/onboarding/presentation/widgets/onboarding_widgets.dart';
 
 class LoginPage extends StatefulWidget {
@@ -19,6 +20,17 @@ class _LoginPageState extends State<LoginPage> {
   bool _obscure = true;
   bool _remember = true;
 
+  void _socialSignIn(String provider) {
+    showConnectionErrorDialog(
+      context,
+      title: '$provider sign-in unavailable',
+      message:
+          "We couldn't connect to $provider right now. "
+          'Please check your connection and try again.',
+      onRetry: () => _socialSignIn(provider),
+    );
+  }
+
   @override
   void dispose() {
     _emailController.dispose();
@@ -30,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return OnboardingScaffold(
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(16, 20, 16, 24),
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 24),
         child: Column(
           children: [
             Align(
@@ -50,17 +62,21 @@ class _LoginPageState extends State<LoginPage> {
               width: 92,
               decoration: BoxDecoration(
                 color: AppColors.bgCard,
-                borderRadius: BorderRadius.circular(28),
+                borderRadius: BorderRadius.circular(8),
                 boxShadow: const [
                   BoxShadow(
-                    color: Color(0x663D4DF2),
+                    color: Color(0x666366F1),
                     blurRadius: 34,
                     spreadRadius: -6,
                   ),
                 ],
               ),
               alignment: Alignment.center,
-              child: Image.asset('assets/images/logo.png', width: 86, height: 86),
+              child: Image.asset(
+                'assets/images/logo.png',
+                width: 86,
+                height: 86,
+              ),
             ),
             const SizedBox(height: 26),
             Text(
@@ -104,7 +120,11 @@ class _LoginPageState extends State<LoginPage> {
                       const _FieldLabel('Access Cipher'),
                       const Spacer(),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () => showAppToast(
+                          context,
+                          'Password reset coming soon',
+                          icon: Icons.lock_reset_rounded,
+                        ),
                         child: const Text('Forgot Cipher?'),
                       ),
                     ],
@@ -156,7 +176,7 @@ class _LoginPageState extends State<LoginPage> {
                         child: _SocialButton(
                           label: 'Google',
                           icon: null,
-                          onPressed: () {},
+                          onPressed: () => _socialSignIn('Google'),
                         ),
                       ),
                       const SizedBox(width: 16),
@@ -165,7 +185,7 @@ class _LoginPageState extends State<LoginPage> {
                           label: 'Apple',
                           icon: null,
                           trailingText: '',
-                          onPressed: () {},
+                          onPressed: () => _socialSignIn('Apple'),
                         ),
                       ),
                     ],
@@ -264,9 +284,7 @@ class _SocialButton extends StatelessWidget {
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
           side: const BorderSide(color: AppColors.borderDefault),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
           foregroundColor: AppColors.textPrimary,
         ),
         child: Row(

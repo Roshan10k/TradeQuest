@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tradequest/core/router/app_routes.dart';
 import 'package:tradequest/core/theme/app_colors.dart';
+import 'package:tradequest/core/widgets/app_feedback.dart';
 import 'package:tradequest/features/onboarding/presentation/widgets/onboarding_widgets.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -19,6 +20,18 @@ class _SignUpPageState extends State<SignUpPage> {
   bool _accepted = false;
   bool _obscure = true;
   String? _emailError;
+
+  void _socialSignUp(String provider) {
+    showConnectionErrorDialog(
+      context,
+      title: '$provider sign-up unavailable',
+      message:
+          "We couldn't connect to $provider right now. "
+          'Please check your connection and try again.',
+      onRetry: () => _socialSignUp(provider),
+    );
+  }
+
   String? _passwordError;
   int _passwordStrength = 0;
 
@@ -88,7 +101,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
     return OnboardingScaffold(
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(16, 20, 16, 24),
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 24),
         child: Column(
           children: [
             Align(
@@ -108,17 +121,21 @@ class _SignUpPageState extends State<SignUpPage> {
               width: 92,
               decoration: BoxDecoration(
                 color: AppColors.bgCard,
-                borderRadius: BorderRadius.circular(28),
+                borderRadius: BorderRadius.circular(8),
                 boxShadow: const [
                   BoxShadow(
-                    color: Color(0x663D4DF2),
+                    color: Color(0x666366F1),
                     blurRadius: 34,
                     spreadRadius: -6,
                   ),
                 ],
               ),
               alignment: Alignment.center,
-              child: Image.asset('assets/images/logo.png', width: 86, height: 86),
+              child: Image.asset(
+                'assets/images/logo.png',
+                width: 86,
+                height: 86,
+              ),
             ),
             const SizedBox(height: 24),
             Text(
@@ -280,7 +297,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         child: _SocialButton(
                           label: 'Google',
                           icon: null,
-                          onPressed: () {},
+                          onPressed: () => _socialSignUp('Google'),
                         ),
                       ),
                       const SizedBox(width: 16),
@@ -288,7 +305,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         child: _SocialButton(
                           label: 'GitHub',
                           trailingText: '⌘',
-                          onPressed: () {},
+                          onPressed: () => _socialSignUp('GitHub'),
                         ),
                       ),
                     ],
@@ -395,9 +412,7 @@ class _SocialButton extends StatelessWidget {
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
           side: const BorderSide(color: AppColors.borderDefault),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
           foregroundColor: AppColors.textPrimary,
         ),
         child: Row(
