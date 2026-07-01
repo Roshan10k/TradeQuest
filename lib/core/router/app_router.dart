@@ -6,9 +6,15 @@ import 'package:tradequest/core/widgets/placeholder_page.dart';
 import 'package:tradequest/features/auth/presentation/pages/login_page.dart';
 import 'package:tradequest/features/auth/presentation/pages/sign_up_page.dart';
 import 'package:tradequest/features/auth/presentation/pages/welcome_page.dart';
+import 'package:tradequest/features/home/presentation/pages/home_page.dart';
 import 'package:tradequest/features/onboarding/presentation/pages/badge_unlock_page.dart';
 import 'package:tradequest/features/onboarding/presentation/pages/first_trade_page.dart';
 import 'package:tradequest/features/onboarding/presentation/pages/goal_selection_page.dart';
+import 'package:tradequest/features/trading/presentation/pages/confirm_trade_page.dart';
+import 'package:tradequest/features/trading/presentation/pages/stock_detail_page.dart';
+import 'package:tradequest/features/trading/presentation/pages/trade_page.dart';
+import 'package:tradequest/features/trading/presentation/pages/trade_result_page.dart';
+import 'package:tradequest/features/trading/presentation/pages/trade_review_page.dart';
 
 class AppRouter {
   AppRouter._();
@@ -52,8 +58,7 @@ class AppRouter {
             routes: [
               GoRoute(
                 path: AppRoutes.home,
-                builder: (context, state) =>
-                    const PlaceholderPage(title: 'Home'),
+                builder: (context, state) => const HomePage(),
               ),
             ],
           ),
@@ -61,8 +66,7 @@ class AppRouter {
             routes: [
               GoRoute(
                 path: AppRoutes.trade,
-                builder: (context, state) =>
-                    const PlaceholderPage(title: 'Trade'),
+                builder: (context, state) => const TradePage(),
               ),
             ],
           ),
@@ -96,17 +100,48 @@ class AppRouter {
         ],
       ),
       GoRoute(
+        path: AppRoutes.portfolioBreakdown,
+        builder: (context, state) =>
+            const PlaceholderPage(title: 'Breakdown'),
+      ),
+      GoRoute(
+        path: AppRoutes.watchlist,
+        builder: (context, state) =>
+            const PlaceholderPage(title: 'Watchlist'),
+      ),
+      GoRoute(
+        path: AppRoutes.settings,
+        builder: (context, state) =>
+            const PlaceholderPage(title: 'Settings'),
+      ),
+      GoRoute(
+        path: AppRoutes.help,
+        builder: (context, state) => const PlaceholderPage(title: 'Help'),
+      ),
+      GoRoute(
         path: AppRoutes.assetDetail,
-        builder: (context, state) => PlaceholderPage(
-          title: 'Asset Detail',
-          subtitle: state.pathParameters['symbol'] ?? 'AAPL',
+        builder: (context, state) =>
+            StockDetailPage(symbol: state.pathParameters['symbol'] ?? 'AAPL'),
+      ),
+      GoRoute(
+        path: AppRoutes.tradeConfirm,
+        builder: (context, state) => ConfirmTradePage(
+          side: state.uri.queryParameters['side'] ?? 'buy',
+          symbol: state.uri.queryParameters['symbol'] ?? 'AAPL',
         ),
       ),
       GoRoute(
         path: AppRoutes.tradeResult,
-        builder: (context, state) => PlaceholderPage(
-          title: 'Trade Result',
-          subtitle: state.uri.queryParameters['side'] ?? 'buy',
+        builder: (context, state) => TradeResultPage(
+          side: state.uri.queryParameters['side'] ?? 'buy',
+          symbol: state.uri.queryParameters['symbol'] ?? 'AAPL',
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.tradeReview,
+        builder: (context, state) => TradeReviewPage(
+          side: state.uri.queryParameters['side'] ?? 'buy',
+          symbol: state.uri.queryParameters['symbol'] ?? 'AAPL',
         ),
       ),
       GoRoute(

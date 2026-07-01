@@ -28,28 +28,68 @@ class MainShell extends StatelessWidget {
           labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
           destinations: const [
             NavigationDestination(
-              icon: Icon(Icons.home_outlined, size: 22, color: AppColors.textSecondary),
-              selectedIcon: Icon(Icons.home_rounded, size: 22, color: AppColors.accentGreen),
+              icon: Icon(
+                Icons.home_outlined,
+                size: 22,
+                color: AppColors.textSecondary,
+              ),
+              selectedIcon: Icon(
+                Icons.home_rounded,
+                size: 22,
+                color: AppColors.accentGreen,
+              ),
               label: 'Home',
             ),
             NavigationDestination(
-              icon: Icon(Icons.swap_horiz_rounded, size: 22, color: AppColors.textSecondary),
-              selectedIcon: Icon(Icons.swap_horiz_rounded, size: 22, color: AppColors.accentGreen),
+              icon: Icon(
+                Icons.swap_horiz_rounded,
+                size: 22,
+                color: AppColors.textSecondary,
+              ),
+              selectedIcon: Icon(
+                Icons.swap_horiz_rounded,
+                size: 22,
+                color: AppColors.accentGreen,
+              ),
               label: 'Trade',
             ),
             NavigationDestination(
-              icon: Icon(Icons.emoji_events_outlined, size: 22, color: AppColors.textSecondary),
-              selectedIcon: Icon(Icons.emoji_events_rounded, size: 22, color: AppColors.accentGreen),
+              icon: Icon(
+                Icons.emoji_events_outlined,
+                size: 22,
+                color: AppColors.textSecondary,
+              ),
+              selectedIcon: Icon(
+                Icons.emoji_events_rounded,
+                size: 22,
+                color: AppColors.accentGreen,
+              ),
               label: 'Missions',
             ),
             NavigationDestination(
-              icon: Icon(Icons.pie_chart_outline_rounded, size: 22, color: AppColors.textSecondary),
-              selectedIcon: Icon(Icons.pie_chart_rounded, size: 22, color: AppColors.accentGreen),
+              icon: Icon(
+                Icons.pie_chart_outline_rounded,
+                size: 22,
+                color: AppColors.textSecondary,
+              ),
+              selectedIcon: Icon(
+                Icons.pie_chart_rounded,
+                size: 22,
+                color: AppColors.accentGreen,
+              ),
               label: 'Portfolio',
             ),
             NavigationDestination(
-              icon: Icon(Icons.person_outline, size: 22, color: AppColors.textSecondary),
-              selectedIcon: Icon(Icons.person_rounded, size: 22, color: AppColors.accentGreen),
+              icon: Icon(
+                Icons.person_outline,
+                size: 22,
+                color: AppColors.textSecondary,
+              ),
+              selectedIcon: Icon(
+                Icons.person_rounded,
+                size: 22,
+                color: AppColors.accentGreen,
+              ),
               label: 'Profile',
             ),
           ],
