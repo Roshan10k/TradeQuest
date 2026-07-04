@@ -7,14 +7,19 @@ import 'package:tradequest/features/auth/presentation/pages/login_page.dart';
 import 'package:tradequest/features/auth/presentation/pages/sign_up_page.dart';
 import 'package:tradequest/features/auth/presentation/pages/welcome_page.dart';
 import 'package:tradequest/features/home/presentation/pages/home_page.dart';
+import 'package:tradequest/features/leaderboard/presentation/pages/leaderboard_page.dart';
+import 'package:tradequest/features/missions/presentation/pages/missions_page.dart';
 import 'package:tradequest/features/onboarding/presentation/pages/badge_unlock_page.dart';
 import 'package:tradequest/features/onboarding/presentation/pages/first_trade_page.dart';
 import 'package:tradequest/features/onboarding/presentation/pages/goal_selection_page.dart';
+import 'package:tradequest/features/portfolio/presentation/pages/portfolio_breakdown_page.dart';
+import 'package:tradequest/features/portfolio/presentation/pages/portfolio_page.dart';
 import 'package:tradequest/features/trading/presentation/pages/confirm_trade_page.dart';
 import 'package:tradequest/features/trading/presentation/pages/stock_detail_page.dart';
 import 'package:tradequest/features/trading/presentation/pages/trade_page.dart';
 import 'package:tradequest/features/trading/presentation/pages/trade_result_page.dart';
 import 'package:tradequest/features/trading/presentation/pages/trade_review_page.dart';
+import 'package:tradequest/features/watchlist/presentation/pages/watchlist_page.dart';
 
 class AppRouter {
   AppRouter._();
@@ -74,8 +79,7 @@ class AppRouter {
             routes: [
               GoRoute(
                 path: AppRoutes.missions,
-                builder: (context, state) =>
-                    const PlaceholderPage(title: 'Missions'),
+                builder: (context, state) => const MissionsPage(),
               ),
             ],
           ),
@@ -83,8 +87,7 @@ class AppRouter {
             routes: [
               GoRoute(
                 path: AppRoutes.portfolio,
-                builder: (context, state) =>
-                    const PlaceholderPage(title: 'Portfolio'),
+                builder: (context, state) => const PortfolioPage(),
               ),
             ],
           ),
@@ -101,13 +104,11 @@ class AppRouter {
       ),
       GoRoute(
         path: AppRoutes.portfolioBreakdown,
-        builder: (context, state) =>
-            const PlaceholderPage(title: 'Breakdown'),
+        builder: (context, state) => const PortfolioBreakdownPage(),
       ),
       GoRoute(
         path: AppRoutes.watchlist,
-        builder: (context, state) =>
-            const PlaceholderPage(title: 'Watchlist'),
+        builder: (context, state) => const WatchlistPage(),
       ),
       GoRoute(
         path: AppRoutes.settings,
@@ -146,8 +147,7 @@ class AppRouter {
       ),
       GoRoute(
         path: AppRoutes.leaderboard,
-        builder: (context, state) =>
-            const PlaceholderPage(title: 'Leaderboard'),
+        builder: (context, state) => const LeaderboardPage(),
       ),
       GoRoute(
         path: AppRoutes.notifications,
